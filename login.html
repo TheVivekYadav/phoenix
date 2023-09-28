@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Login -User</title>
+	<style>
+		body{
+		display:grid;
+		justify-content:center;
+		align-items:center;
+}
+		table tr td{
+			padding:10px 20px;
+}
+
+		input[type="text"],input[type="password"]{
+			border: 3px solid black;
+}
+		input[value="Submit"]{
+			box-shadow: -2px 2px black,
+					2px 2px black;
+			color:red;
+			padding:10px 20px;
+			font-size:20px;
+}
+		input[value="Reset"]{
+			color:red;
+			padding:10px 20px;
+			font-size:20px;
+}
+	</style>
+</head>
+<body>
+<table class="child">
+				<tr>
+					<td colspan="2" style="text-align:center;font-size:30px;">Login Page</td>
+				</tr>
+				<tr>
+					<td>User Name:</td>
+					<td> <input type="text" name="usename" required></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td> <input type="password" name="password" required></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Submit"></td>
+					<td style="text-align:center"> <input type="button" value="Reset"></td>
+				</tr>
+			</table>
+</body>
+</html>

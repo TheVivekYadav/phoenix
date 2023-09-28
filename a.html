@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>First Webpage</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+	
+	table{
+		width:100vw;
+		height:100vh;
+}
+table.parent tr td{
+		border: 1px solid black;
+		text-align:center;
+}
+table.child tr td{
+			border: none;
+		font-size:30px;
+}
+input[type="text"]{
+	width:10em;
+	height:15px;
+	padding: 10px;
+}
+input[type="button"]{
+
+	padding: 10px;
+}
+</style>
+	</head>
+	<body>
+	<table class="parent">
+	<tr>
+		<td class="left">Logo</td>
+	<tr>
+		<td class="left">Home</td>
+		<td>login</td>
+		<td>Registration</td>
+		<td>catlog</td>
+		<td>cart</td>
+	</tr>
+	<tr>
+		<td class="left">
+			<ul>
+				<li>CSE
+				<li>ECE
+				<li>EEE
+				<li>CIVIL
+			</ul>
+		</td>
+		<td colspan=5>
+			<table class="child">
+				<tr>
+					<td colspan="2">Login Page</td>
+				</tr>
+				<tr>
+					<td>User Name:</td>
+					<td> <input type="text" name="usename"></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td> <input type="text" name="usename"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="submit"></td>
+					<td> <input type="button" value="Reset"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+	</body>
+</html>

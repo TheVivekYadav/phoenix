@@ -11,6 +11,19 @@ width:300px;
 		height:70px;
 		width:200px;
 }
+.message-container {
+	position: fixed;
+	bottom: 20px;
+	right: -100%; /* Initially hidden on the right */
+	background-color: #FF6600;
+	color: #fff;
+	width: auto;
+	height: auto;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: right 0.5s ease-in-out;
+}
+
 		</style>
 	</head>
 <body>
@@ -19,29 +32,63 @@ width:300px;
 			<td><img src="download.JFIF"></td>
 			<td>Book:XML Bible<br>Auhor:Wiston<br>Publication:wiely</td>
 			<td>$40.5</td>
-			<td><a href="#"><img onclick="alert('added to card')" class="img" src="add2cart.jfif"></a></td>
+			<td><button><img data-product="XML Bible"  class="add-to-cart-button"   class="img" src="add2cart.jfif"></button></td>
 		</tr>
 		<tr>
 			<td><img src="download.png"></td>
 			<td>Book:AI<br>Auhor:S.Russel<br>Princetonhall</td>
 			<td>$63</td>
-			<td><a href="#"><img onclick="add2cart()" class="img" src="add2cart.jfif"></a></td>
+			<td><button><img  data-product="AI" class="add-to-cart-button"  class="img" src="add2cart.jfif"></button></td>
 		</tr>
 		<tr>
 			<td><img src="download.JFIF"></td>
 			<td>Book:Java 2<br>Auhor:Waston<br>BPB Publications</td>
 			<td>$35.5</td>
-			<td><a href="#"><img onclick="add2cart()" class="img" src="add2cart.jfif"></a></td>
+			<td><button><img  class="add-to-cart-button"   data-product="Java 2"  class="img" src="add2cart.jfif"></button></td>
 		</tr>
 		<tr>
 			<td><img src="download.png" alt="image"></td>
 			<td>Book:HTML in 24 hours<br>Auhor:Sam Peter<br>SamPublication:wiely</td>
 			<td>$50</td>
-			<td><a href"#"><img onclick="add2cart()" class="img" src="add2cart.jfif"></a></td>
+			<td><button><img class="add-to-cart-button"  data-product="HTML in 24 hours" class="img" src="add2cart.jfif"></button></td>
 		</tr>
 	</table>
 <script>
+	document.addEventListener('DOMContentLoaded', function () {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+	});
 
+	function addToCart(event) {
+		const productName = event.currentTarget.getAttribute('data-product');
+		let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : {};
+		cart[productName] = cart[productName] ? cart[productName] + 1 : 1;
+		localStorage.setItem('cart', JSON.stringify(cart));
+		console.log(cart)
+		showMessage(productName + ' added sucessfully',1000)
+	}
+	function showMessage(message, duration) {
+		console.log('message')
+		const messageContainer = document.createElement('div');
+		messageContainer.className = 'message-container';
+		messageContainer.textContent = message;
+
+		document.body.appendChild(messageContainer);
+
+		void messageContainer.offsetWidth;
+
+		messageContainer.style.right = '20px';
+
+		setTimeout(() => {
+			messageContainer.style.right = '-100%';
+
+			setTimeout(() => {
+				document.body.removeChild(messageContainer);
+			}, 500); 
+		}, duration);
+	}
+});
 </script>
 </body>
 </html>

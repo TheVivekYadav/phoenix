@@ -1,38 +1,366 @@
 <html>
-<head>
-<title>Cart</title>
-<style>
-td{
-	padding: 10px;
+  <head>
+    <title>Cart</title>
+    <style>
+		*{
+		
+overflow: hidden;
+		}
+button:hover{
+	cursor: pointer;
 }
-</style>
-</head>
-<body>
-<table>
-	<tr>
-		<td>Book Name</td>
-		<td>Price</td>
-		<td>Quantity</td>
-		<td>Amount</td>
-	</tr>
-	<tr>
-		<td>Java 2</td>
-		<td>$35.5</td>
-		<td>2</td>
-		<td>70</td>
-	</tr>
-	<tr>
-		<td>Java 2</td>
-		<td>$35.5</td>
-		<td>2</td>
-		<td>70</td>
-	</tr>
-	<tr>
-		<td>Java 2</td>
-		<td>$35.5</td>
-		<td>2</td>
-		<td>70</td>
-	</tr>
-</table>
-</body>
+		table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .total {
+        font-weight: bold;
+      }
+	  /*celebration css*/
+	  #celebration{
+		display: none;
+	}
+	  .confetti {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		z-index: 1000;
+	}
+	.confetti-piece {
+		position: absolute;
+		width: 10px;
+		height: 30px;
+		background: #ffd300;
+		top: 0;
+		opacity: 0;
+	}
+	.confetti-piece:nth-child(1) {
+		left: 7%;
+		transform: rotate(-40deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 182ms;
+		animation-duration: 1116ms;
+	}
+	.confetti-piece:nth-child(2) {
+		left: 14%;
+		transform: rotate(4deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 161ms;
+		animation-duration: 1076ms;
+	}
+	.confetti-piece:nth-child(3) {
+		left: 21%;
+		transform: rotate(-51deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 481ms;
+		animation-duration: 1103ms;
+	}
+	.confetti-piece:nth-child(4) {
+		left: 28%;
+		transform: rotate(61deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 334ms;
+		animation-duration: 708ms;
+	}
+	.confetti-piece:nth-child(5) {
+		left: 35%;
+		transform: rotate(-52deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 302ms;
+		animation-duration: 776ms;
+	}
+	.confetti-piece:nth-child(6) {
+		left: 42%;
+		transform: rotate(38deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 180ms;
+		animation-duration: 1168ms;
+	}
+	.confetti-piece:nth-child(7) {
+		left: 49%;
+		transform: rotate(11deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 395ms;
+		animation-duration: 1200ms;
+	}
+	.confetti-piece:nth-child(8) {
+		left: 56%;
+		transform: rotate(49deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 14ms;
+		animation-duration: 887ms;
+	}
+	.confetti-piece:nth-child(9) {
+		left: 63%;
+		transform: rotate(-72deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 149ms;
+		animation-duration: 805ms;
+	}
+	.confetti-piece:nth-child(10) {
+		left: 70%;
+		transform: rotate(10deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 351ms;
+		animation-duration: 1059ms;
+	}
+	.confetti-piece:nth-child(11) {
+		left: 77%;
+		transform: rotate(4deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 307ms;
+		animation-duration: 1132ms;
+	}
+	.confetti-piece:nth-child(12) {
+		left: 84%;
+		transform: rotate(42deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 464ms;
+		animation-duration: 776ms;
+	}
+	.confetti-piece:nth-child(13) {
+		left: 91%;
+		transform: rotate(-72deg);
+		animation: makeItRain 1000ms infinite ease-out;
+		animation-delay: 429ms;
+		animation-duration: 818ms;
+	}
+	.confetti-piece:nth-child(odd) {
+		background: #7431e8;
+	}
+	.confetti-piece:nth-child(even) {
+		z-index: 1;
+	}
+	.confetti-piece:nth-child(4n) {
+		width: 5px;
+		height: 12px;
+		animation-duration: 2000ms;
+	}
+	.confetti-piece:nth-child(3n) {
+		width: 3px;
+		height: 10px;
+		animation-duration: 2500ms;
+		animation-delay: 1000ms;
+	}
+	.confetti-piece:nth-child(4n-7) {
+	  background: red;
+	}
+	@keyframes makeItRain {
+		from {opacity: 0;}
+		50% {opacity: 1;}
+		to {transform: translateY(350px);}
+	}
+    </style>
+  </head>
+  <body>
+	<div id="celebration">
+		<div class="confetti">
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+			<div class="confetti-piece"></div>
+		</div>
+	</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th colspan="3">Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+      <tfoot>
+        <tr>
+          <td class="total" colspan="2">Total:</td>
+          <td class="total" id="total-price"></td>
+          <td>
+            <button id="checkout-button" style="display: none">✓</button>
+          </td>
+          <td colspan="2"></td>
+        </tr>
+      </tfoot>
+    </table>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cartItems = document.getElementById("cart-items");
+        const totalPriceElement = document.getElementById("total-price");
+        const checkOutButton = document.getElementById("checkout-button");
+		let cartData = JSON.parse(localStorage.getItem("cart"));
+
+		checkOutButton.addEventListener('click',checkOut)
+		function checkOut() {
+			const celebration = document.getElementById('celebration');
+			celebration.style.display = "block";
+			setTimeout(function() {
+			  celebration.style.display = "none";
+			}, 5000);
+			checkout()
+		}
+		  
+		function checkout() {
+			// Clear the cart data
+			localStorage.removeItem('cart');
+			// Reset cartData to an empty object
+			cartData = {};
+			// Update the cart display
+			updateCartDisplay();
+			// Hide the "Checkout" button
+			updateCheckoutButtonVisibility();
+		}
+        function calculateTotalPrice() {
+          let total = 0;
+          for (const product in cartData) {
+            const price = prices[product];
+            total += price * cartData[product];
+          }
+          return total.toFixed(2);
+        }
+
+        function updateCartDisplay() {
+          while (cartItems.firstChild) {
+            cartItems.removeChild(cartItems.firstChild);
+          }
+		  try{
+		  if (Object.keys(cartData).length === 0) {
+            const emptyRow = document.createElement("tr");
+            const emptyMessageCell = document.createElement("td");
+
+            emptyMessageCell.textContent = "Your cart is empty.";
+            totalPriceElement.textContent = `$${calculateTotalPrice()}`;
+            emptyMessageCell.colSpan = 4;
+
+            emptyRow.appendChild(emptyMessageCell);
+            cartItems.appendChild(emptyRow);
+          } else {
+            let total = 0;
+
+            for (const product in cartData) {
+              const row = document.createElement("tr");
+              const productNameCell = document.createElement("td");
+              const quantityCell = document.createElement("td");
+              const priceCell = document.createElement("td");
+              const addOneButtonCell = document.createElement("td");
+              const addOneButton = document.createElement("button");
+              const removeOneButtonCell = document.createElement("td");
+              const removeOneButton = document.createElement("button");
+              const removeButtonCell = document.createElement("td");
+              const removeButton = document.createElement("button");
+
+
+              const price = prices[product];
+              let quantity = cartData[product];
+              const totalPriceForProduct = price * quantity;
+              total += totalPriceForProduct;
+              console.log(product);
+
+              productNameCell.textContent = product;
+              quantityCell.textContent = quantity;
+              priceCell.textContent = `$${price.toFixed(2)}`;
+
+              addOneButton.textContent = "+";
+              addOneButton.addEventListener("click", function () {
+                // Increase the quantity of the item in the cart by one when the "Add One" button is clicked.
+                cartData[product]++;
+                localStorage.setItem("cart", JSON.stringify(cartData));
+                updateCartDisplay();
+              });
+
+              removeOneButton.textContent = "-";
+              removeOneButton.addEventListener("click", function () {
+                // Remove one item from the cart when the "Remove One" button is clicked.
+                if (quantity > 1) {
+                  cartData[product]--;
+                } else {
+                  delete cartData[product];
+                }
+                localStorage.setItem("cart", JSON.stringify(cartData));
+                updateCartDisplay();
+                updateCheckoutButtonVisibility();
+              });
+
+              removeButton.textContent = "Remove All";
+              removeButton.addEventListener("click", function () {
+                // Remove all items of this type from the cart when the "Remove All" button is clicked.
+                delete cartData[product];
+                localStorage.setItem("cart", JSON.stringify(cartData));
+                updateCartDisplay();
+                updateCheckoutButtonVisibility();
+
+              });
+
+              addOneButtonCell.appendChild(addOneButton);
+              removeOneButtonCell.appendChild(removeOneButton);
+              removeButtonCell.appendChild(removeButton);
+
+              row.appendChild(productNameCell);
+              row.appendChild(quantityCell);
+              row.appendChild(priceCell);
+              row.appendChild(addOneButtonCell);
+              row.appendChild(removeOneButtonCell);
+              row.appendChild(removeButtonCell);
+
+              cartItems.appendChild(row);
+            }
+			
+
+            totalPriceElement.textContent = `$${calculateTotalPrice()}`;
+          }
+		          }        
+				catch{
+					alert('cart is empty')
+				}}
+        // Add this code after the updateCartDisplay() function definition
+        function updateCheckoutButtonVisibility() {
+          const checkoutButton = document.getElementById("checkout-button");
+		  try{
+          if (Object.keys(cartData).length === 0) {
+            checkoutButton.style.display = "none";
+          } else {
+            checkoutButton.style.display = "block";
+          }}catch{
+
+		  }
+        }
+        const prices = {
+          "HTML in 24 hours": 19.99,
+          "Java 2": 39.99,
+          AI: 299.99,
+          "XML Bible": 89.99,
+
+          // Add prices for other products here.
+        };
+
+        updateCartDisplay();
+        updateCheckoutButtonVisibility();
+      });
+    </script>
+  </body>
 </html>

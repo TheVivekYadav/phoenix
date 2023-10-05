@@ -1,20 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body{
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
+      body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 10px 50px;
+      }
+h1{
+        padding: 10px 20px;
+        transition: 400ms;
+}
+p{
+    line-height: 2vw;
+}
+      h1+p{
+        padding: 10px;
+        padding-left: 30px;
+      }
+      div.container-child{
+        margin-top: 20px;
+        word-spacing: 0.5vw;
+        box-shadow: 0px 0px 5px #000,
+                    0px 0px #000;
+        padding: 10px;
+        border-radius: 1vw;
+      }
+      h1.heading{
+        background-color: black;
+        color: #fff;
+        border-top-left-radius: 2vw;
+        padding: 10px 20px;
+      }
+      h2.heading{
+        text-align: center;
+        background-color: #000;
+        color: #fff;
+        border-top-left-radius: 2vw;
+        padding: 10px 20px;
+      }
+      p>span{
+        font-weight: bold;
+        font-size: 20px;
+      }
+      p.last{
+        margin-top: 20px;
+    }
     </style>
-</head>
-<body>
-    Discription of website
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Welcome to <span class="blue">Phoniex!</span></h1>
+      <p>
+        At <span class="blue">Phoniex!</span>, we are your one-stop destination
+        for all things related to engineering and academics. Whether you're a
+        student, a professional, or simply passionate about the world of
+        engineering, our website offers an array of resources and services to
+        cater to your needs.
+      </p>
+      <div class="container-child">
+      <h1>Explore Engineering Disciplines:</h1>
+      <p>
+        Our website is divided into dedicated sections for various engineering
+        disciplines, including Computer Science and Engineering (CSE),
+        Electrical and Electronics Engineering (EEE), and Civil Engineering.
+        Each section provides a wealth of information, resources, and updates
+        specific to its respective field. Whether you're looking for the latest
+        news, research articles, or career guidance, you'll find it all here.
+      </p>
+    </div>
+    <div class="container-child">
+      <h1>Catalogue for Engineering Books:</h1>
+      <p>
+        Are you in search of the best engineering textbooks and reference
+        materials? Look no further! Our extensive catalogue features a curated
+        selection of books covering a wide range of topics within the field of
+        engineering. From introductory textbooks to advanced technical manuals,
+        we've got you covered. You can conveniently browse, compare, and
+        purchase the books you need to excel in your studies or enhance your
+        professional knowledge.
+      </p>
+      </div>
+      <h2 class="heading">Why Choose Phoniex?</h2>
+      <ol>
+        <li><p>
+        <span>Comprehensive Information: </span><br />We provide in-depth information
+        and updates on CSE, EEE, and Civil Engineering to keep you informed
+        about the latest trends, developments, and breakthroughs in these
+        fields.
+      </p>
+      <li><p>
+        <span>Quality Book Selection: </span><br />
+        Our catalogue features carefully selected engineering books from trusted
+        publishers, ensuring that you have access to the best educational
+        resources.
+      </p>
+
+      <li><p>
+        <span>User-Friendly Navigation: </span><br />Our website is designed with user
+        convenience in mind. The intuitive navigation allows you to easily find
+        the content or books you're looking for.
+      </p>
+
+      <li><p>
+        <span>Educational Support: </span><br />Whether you're a student seeking study
+        materials or a professional looking to expand your knowledge, we aim to
+        support your educational and career goals.
+      </p>
+
+      <li><p>
+        <span>Regular Updates: </span><br />We strive to keep our website up-to-date
+        with the latest information and book releases, ensuring that you're
+        always in the know.
+      </p>
+    </ol>
+      <p class="last">
+        Phoniex is dedicated to fostering a community of engineers, students,
+        and enthusiasts who share a passion for innovation and progress. We
+        invite you to explore our website, discover valuable resources, and find
+        the engineering books that will fuel your intellectual growth and career
+        success.
+      </p>
+      <p class="last">
+        Thank you for visiting Phoniex, and we hope you find it to
+        be a valuable hub for all your engineering-related needs. Feel free to
+        reach out to us with any questions or feedback; we'd love to hear from
+        you!
+      </p>
+    </div>
+  </body>
 </html>

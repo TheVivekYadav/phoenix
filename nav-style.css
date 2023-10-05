@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+.container{
+    margin-top: 10vh;
+}
+.container .child{
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 400ms;
+    margin: 20px;
+}
+.container .child:hover{
+    background-color: #000;
+    color: #fff;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+}

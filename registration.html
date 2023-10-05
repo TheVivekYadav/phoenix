@@ -5,7 +5,7 @@
 	body{
 		display:grid;
 		justify-content:center;
-		lign-items:center;
+		align-items:center;
 }
 	td{
 	padding:10px 20px;
@@ -17,19 +17,19 @@
 		<table>
 			<tr>
 				<td>Name:</td>
-				<td><input type="text" required></td>
+				<td><input type="text" id="name" required></td>
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><input type="password" required></td>
+				<td><input type="password" id="password" required></td>
 			</tr>
 			<tr>
-				<td>Email Id</td>
-				<td><input type="email" required></td>
+				<td>Email Id:</td>
+				<td><input type="email" id="email" required></td>
 			</tr>
 			<tr>
-				<td>Phone Number</td>
-				<td><input type="number" required></td>
+				<td>Phone Number:</td>
+				<td><input type="tel" id="phone" required></td>
 			</tr>
 			<tr>
 				<td>Sex</td>
@@ -48,9 +48,45 @@
 				<td><textarea></textarea></td>
 			</tr>
 			<tr>
-				<td colspan=2><input type="button" value="submit"></td>
+				<td colspan=2><input type="button" value="submit" onclick="validateForm()"></td>
 			</tr>
 		</table>
 	</form>
+	<script>
+		function validateForm() {
+			console.log(1)
+			var name = document.getElementById('name').value;
+			var password = document.getElementById('password').value;
+			var email = document.getElementById('email').value;
+			var phone = document.getElementById('phone').value;
+	
+			// Name validation (at least 6 characters with only alphabets)
+			if (name.length < 6 || !/^[a-zA-Z]+$/.test(name)) {
+				alert("Name should contain alphabets only and be at least 6 characters long.");
+				return false;
+			}
+	
+			// Password validation (at least 6 characters)
+			if (password.length < 6) {
+				alert("Password should be at least 6 characters long.");
+				return false;
+			}
+	
+			// Email validation (standard email pattern)
+			if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+				alert("Invalid email address. Please follow the standard email pattern.");
+				return false;
+			}
+	
+			// Phone number validation (exactly 10 digits)
+			if (!/^\d{10}$/.test(phone)) {
+				alert("Phone number should contain exactly 10 digits.");
+				return false;
+			}
+	
+			// If all validations pass, you can submit the form
+			document.getElementById('myForm').submit();
+		}
+	</script>
 </body>
 </html>

@@ -13,7 +13,7 @@ body {
     text-align: center;
   }
 td.heading{
-  font-size: 60px;
+  font-size: 5vw;
 }
   td a{
     padding: 10px 30px;
@@ -22,8 +22,8 @@ td.heading{
   }
   img[src="logo.jfif"] {
     padding: 0px;
-    width: 50px;
-    height: 50px;
+    width: 7vw;
+    height: 7vw;
   }
   a{
     list-style: none;

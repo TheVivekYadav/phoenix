@@ -5,19 +5,20 @@
     margin-top: 10vh;
 }
 .container .child{
-    padding: 10px 20px;
     text-align: center;
     cursor: pointer;
     transition: 400ms;
     margin: 20px;
-}
-.container .child:hover{
-    background-color: #000;
-    color: #fff;
 }
 a{
     color: inherit;
     text-decoration: none;
     width: 100%;
     letter-spacing: 1vw;
+    padding: 2.7vh 30vw;
+    transition: 400ms;
+}
+a:hover{
+    background-color: #000;
+    color: #fff;
 }
